@@ -6,10 +6,19 @@ const CaseName = "CaseName"
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: CaseName, 
-    TestList: '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>QQ'
-
+    TestList: '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'
   });
-});
+  next();
+})
+router.get('/search', function(req, res, next){
+  const id = req.query.search
+  console.log(id);
+  res.render('index',{
+      title: id, 
+      TestList: id
+  });
+})
+
 
 
 
