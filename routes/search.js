@@ -25,7 +25,7 @@ router.get('/', async function(req, res, next){
     title.push(database[i].title);
 
   }
-  res.render('search',{
+  res.render('search',{ //變數
     item: title,
   })
 })
