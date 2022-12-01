@@ -10,10 +10,27 @@
     "bootstrap": "^5.2.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": "��#\u0000 \u0000W\u0000E\u0000B\u0000\r\u0000 \u0000#\u0000 \u0000W\u0000E\u0000B\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjsadjkl/WEB.git"
+  },
+  "keywords": [
+    "coffee"
+  ],
+  "author": "ilica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjsadjkl/WEB/issues"
+  },
+  "homepage": "https://github.com/hjsadjkl/WEB#readme"
 }

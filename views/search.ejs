@@ -11,9 +11,10 @@
   </head>
   <body>
     <%- include('menu.ejs')  %> 
-    <h1>
-      <p>welcome <%= title %>  </p>
-      <%- TestList  %> 
-    </h1>
+    <div class="container">
+      <% for(var i=0 ; i<item.length; i++){%>
+        <%= item[i] %> <br>
+        <% } %>   
+    </div>
   </body>
 </html>
