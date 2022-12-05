@@ -8,6 +8,27 @@ ion-icon {
   color: #272727;
   font-size: 8px;
 }
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  position: absolute ;
+  top: 15%;
+  left: 15%;
+  right: 15%;
+  height: 75%;
+  width: 75%;
+}
+
+#body {
+  height: 100%;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+}
 
 
 
