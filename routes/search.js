@@ -15,22 +15,42 @@ async function getTable(){
     return rows;
 }
 async function getTableId(id){
-  const [rows] = await pool.query(`SELECT ? FROM Article`,id);
+  const [rows] = await pool.query(`
+  select *
+  FROM Article
+  where title like '%` + id + `%' OR adress like '%`+id + `%';`);
+  return rows;
 }
 
 router.get('/', async function(req, res, next){
-  let database = await getTable("title");
-  let title=[], adress=[], content=[];
-  for(let i=0; i<database.length; i++){
-    title.push(database[i].title);
-    adress.push(database[i].adress);
-    content.push(database[i].content);
+  if(req.query.search === ''){
+    let database = await getTable();
+    let title=[], adress=[], content=[];
+    for(let i=0; i<database.length; i++){
+      title.push(database[i].title);
+      adress.push(database[i].adress);
+      content.push(database[i].content);
+    }
+    res.render('search',{ 
+      title: title,
+      adress:adress ,
+      content:content
+    })
+  }else{
+    let database = await getTableId(req.query.search);
+    let title=[], adress=[], content=[];
+    for(let i=0; i<database.length; i++){
+      title.push(database[i].title);
+      adress.push(database[i].adress);
+      content.push(database[i].content);
+    }
+    res.render('search',{ 
+      title: title,
+      adress:adress ,
+      content:content
+    })
   }
-  res.render('search',{ 
-    title: title,
-    adress:adress ,
-    content:content
-  })
+
 })
 
 
