@@ -8,6 +8,7 @@
      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -15,6 +16,39 @@
   <body>
     <%- include('menu.ejs')  %> 
 
+=======
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style type="text/css" media="screen">
+      html {
+          height: 100%;
+          width: 100%;
+      }
+  
+      #map {
+          position: absolute;
+          top: 25%;
+          left: 0;
+          height: 75%;
+          width: 100vw;
+      }
+  
+      #body {
+          height: 100%;
+          width: 100vw;
+          position: relative;
+          top: 0;
+          left: 0;
+      }
+      </style>
+
+  </head>
+  <body>
+    <%- include('menu.ejs')  %> 
+>>>>>>> c3834df91fff23798ba2a8e60e798c534e40be0e
     <div class="container">
       <div class="accordion accordion-flush "; id="accordionExample">
         <div class="accordion-item " >
@@ -86,5 +120,42 @@
         </div>
       </div>
     </div>
+
+    <!-- 中正區 -->
+    <div class="body1">
+      <div id="area1" style="color: #ffffff;">
+        <h1>中正區</h1>
+      </div>
+      
+      <div id="map"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <script>
+        function initMap() {
+            var Station_latlng = { lat: 25.046891, lng: 121.516602 }; // 台北車站的經緯度
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14, //放大的倍率
+                center: Station_latlng //初始化的地圖中心位置
+            });
+    
+            //--------下面是呼叫一個新marker------
+    
+            var marker = new google.maps.Marker({
+                position: Station_latlng, //marker的放置位置
+                map: map //這邊的map指的是第四行的map變數
+            });
+    
+        }
+        /*還沒用的function
+        function map1() {
+        var map1 = document.getElementById('map1');
+        var maphide1 = document.getElementById('maphide1');
+        }
+        */
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_Za7RqKvUuEg2Nln0EcpUVN3k2fZtDuE&callback=initMap">
+        </script>
+    </div>
+    
   </body>
 </html>
