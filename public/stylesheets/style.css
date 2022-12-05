@@ -1,6 +1,15 @@
 body {
   background-color: #9D9D9D;
 }
+.listHeader{
+  background-color: #6C6C6C;
+}
+ion-icon {
+  color: #272727;
+  font-size: 8px;
+}
+
+
 
 
 

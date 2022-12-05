@@ -20,13 +20,16 @@ async function getTableId(id){
 
 router.get('/', async function(req, res, next){
   let database = await getTable("title");
-  let title = [];
+  let title=[], adress=[], content=[];
   for(let i=0; i<database.length; i++){
     title.push(database[i].title);
-
+    adress.push(database[i].adress);
+    content.push(database[i].content);
   }
-  res.render('search',{ //變數
-    item: title,
+  res.render('search',{ 
+    title: title,
+    adress:adress ,
+    content:content
   })
 })
 
