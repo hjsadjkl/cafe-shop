@@ -4,6 +4,7 @@ var mysql = require('mysql2');
 const config = require('dotenv').config()
 
 const pool =  mysql.createPool({
+  port: process.env.PORT,
   host: process.env.HOST,
   user: process.env.USER,
   password: process.env.PASSWORD,
@@ -18,7 +19,7 @@ async function getTableId(id){
   const [rows] = await pool.query(`
   select *
   FROM Article
-  where title like '%` + id + `%' OR adress like '%`+id + `%';`);
+  where title like '%` + id + `%' OR adress like '%`+id +`%';`);
   return rows;
 }
 
