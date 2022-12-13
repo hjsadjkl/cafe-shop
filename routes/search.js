@@ -26,16 +26,18 @@ async function getTableId(id){
 router.get('/', async function(req, res, next){
   if(req.query.search === ''){
     let database = await getTable();
-    let title=[], adress=[], content=[];
+    let title=[], adress=[], content=[], link=[];
     for(let i=0; i<database.length; i++){
       title.push(database[i].title);
       adress.push(database[i].adress);
       content.push(database[i].content);
+      link.push(database[i].link);
     }
     res.render('search',{ 
       title: title,
       adress:adress ,
-      content:content
+      content:content,
+      link: link
     })
   }else{
     let database = await getTableId(req.query.search);
